@@ -1,0 +1,27 @@
+<div class='jumbotron'>
+  
+    <%= image_tag("logo_big.png", width: 408)%>
+    <h1>Where waves push forward</h1>
+    <p>We are an ambitious startup company developing products using BCI technology.</p>
+    <p>We use inexpensive and non-invasive EEG headsets to send brain activity data to the computer or other device.</p>
+
+  
+</div>
+
+<div class='container'>
+  <p id="notice"><%= notice %></p>
+
+  <h1>Recent posts</h1>
+  <% @posts.each do |post| %>
+    <div class='col-md-4'>
+    <div class='post-preview' style='background:  linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("<%= post.preview_image_url%>")'>
+      <div class='preview-contents'>
+        <h2><%= post.title %></h2>
+        <%= simple_format(post.preview) %>
+      </div>
+      <a class="btn btn-default" href="<%= post_path(post) %>" role="button">Read more »</a>
+      </div>
+    </div>
+  <% end %>
+</div>
+

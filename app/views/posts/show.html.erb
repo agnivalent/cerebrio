@@ -1,0 +1,6 @@
+<div class='container'> 
+  <p id="notice"><%= notice %></p>
+  <h1><%= @post.title %></h1>
+  <%= @markdown.render(@post.contents).html_safe %>
+  <%= link_to 'Back', posts_path %>
+</div>
