@@ -31,7 +31,7 @@ gem 'redcarpet'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 group :production do
   gem 'pg'

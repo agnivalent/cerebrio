@@ -23,3 +23,11 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: cerebrio_production
+  pool: 5
+  username: cerebrio
+  password: OTFlNzNkNzkzZDg5NTQyZmE2YWI2NzBl
