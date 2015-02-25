@@ -30,14 +30,16 @@ gem 'redcarpet'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
-
 group :production do
   gem 'pg'
+  gem 'unicorn'
 end
 
 group :development, :test do
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'

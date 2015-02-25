@@ -1,9 +1,13 @@
-require 'bundler/capistrano'
+# require 'bundler/capistrano'
 # config valid only for current version of Capistrano
 lock '3.3.5'
 
 set :application, 'cerebrio'
 set :repo_url, 'https://github.com/agnivalent/cerebrio.git'
+
+set :rvm_ruby_version, '2.1.5'
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
+SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
